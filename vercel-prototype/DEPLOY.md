@@ -12,10 +12,14 @@ This directory contains a browse-only static prototype assembled from the 26 cur
 
 If deploying from the command line with Vercel CLI, run it from this directory and use Vercel's static deployment flow.
 
+## Home design
+
+The desktop storefront root page and `/home/desktop/` share the DTC homepage layout. The design emphasizes the tactile product visuals, a scalable featured-products section, and a link to the full collection. Mobile styling remains a separate prototype view.
+
 ## Limitations
 
 - This is a design prototype, not a production storefront.
-- Clear browse/navigation links connect to existing static routes; unavailable destinations such as Contact, account, search, story, gallery, and news remain unimplemented.
+- The desktop homepage uses consumer-store navigation, a featured-products section, and an all-products link to the collection page. Contact, account, search, story, gallery, and news pages are not implemented.
 - No live cart, order submission, Medusa backend, or Stripe payment processing is included. Purchase and checkout-finalization controls stay disabled; the order-complete screen is a standalone prototype and is not reached by submitting an order.
 - Contact is not created.
 - The homepage demo video is served locally from `assets/product-demo.mp4` (about 40 MB); include this file when deploying. Playback uses native controls, muted autoplay, and looping.
