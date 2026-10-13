@@ -15,8 +15,8 @@ If deploying from the command line with Vercel CLI, run it from this directory a
 ## Limitations
 
 - This is a design prototype, not a production storefront.
-- Cross-screen browsing is available from the index page; the original screens' internal controls are not comprehensively wired.
-- No live cart, order submission, Medusa backend, or Stripe payment processing is included. Checkout remains non-functional and purchase controls stay disabled.
+- Clear browse/navigation links connect to existing static routes; unavailable destinations such as Contact, account, search, story, gallery, and news remain unimplemented.
+- No live cart, order submission, Medusa backend, or Stripe payment processing is included. Purchase and checkout-finalization controls stay disabled; the order-complete screen is a standalone prototype and is not reached by submitting an order.
 - Contact is not created.
-- Tailwind, fonts/icons, and product images are fetched from third-party URLs; rendering may be incomplete if network access or those URLs fail.
+- The homepage demo video is served locally from `assets/product-demo.mp4` (about 40 MB); include this file when deploying. Playback uses native controls and does not autoplay.
 - Prices, materials, shipping, and legal/operational details remain unconfirmed. Do not use this deployment to accept sales.

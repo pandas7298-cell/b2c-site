@@ -60,11 +60,11 @@
   <header class="sticky top-0 z-40 bg-brand-bg/90 backdrop-blur-md border-b border-brand-border">
     <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
       <div class="flex items-center gap-8">
-        <a href="#store" class="text-xl font-bold tracking-wider font-headline-md text-brand-charcoal hover:opacity-80 transition-opacity">
+        <a href="/" class="text-xl font-bold tracking-wider font-headline-md text-brand-charcoal hover:opacity-80 transition-opacity">
           Tabajoy <span class="text-xs font-normal text-brand-stone ml-1">たばじょい</span>
         </a>
         <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-brand-stone">
-          <a href="#collection" class="hover:text-brand-charcoal transition-colors">コレクション</a>
+          <a href="/collection/desktop/" class="hover:text-brand-charcoal transition-colors">コレクション</a>
           <a href="#about" class="hover:text-brand-charcoal transition-colors">私たちについて</a>
           <a href="#notice" class="hover:text-brand-charcoal transition-colors">お知らせ</a>
         </nav>
@@ -76,9 +76,9 @@
         <button type="button" aria-label="検索" class="p-1.5 hover:text-brand-charcoal transition-colors">
           <span class="material-symbols-outlined text-[20px]">search</span>
         </button>
-        <button type="button" aria-label="買い物かご" class="p-1.5 hover:text-brand-charcoal transition-colors">
+        <a href="/cart/empty/" aria-label="買い物かご" class="p-1.5 hover:text-brand-charcoal transition-colors">
           <span class="material-symbols-outlined text-[20px]">shopping_bag</span>
-        </button>
+        </a>
       </div>
     </div>
   </header>
@@ -86,9 +86,9 @@
   <!-- Breadcrumb -->
   <nav class="max-w-6xl mx-auto px-6 pt-5 pb-3 w-full" aria-label="パンくずリスト">
     <ol class="flex items-center gap-2 text-xs text-brand-stone">
-      <li><a href="#home" class="hover:text-brand-charcoal">ホーム</a></li>
+      <li><a href="/" class="hover:text-brand-charcoal">ホーム</a></li>
       <li><span class="text-brand-stone/60">/</span></li>
-      <li><a href="#collection" class="hover:text-brand-charcoal">コレクション</a></li>
+      <li><a href="/collection/desktop/" class="hover:text-brand-charcoal">コレクション</a></li>
       <li><span class="text-brand-stone/60">/</span></li>
       <li class="text-brand-charcoal font-medium" aria-current="page">たまごおにぎり</li>
     </ol>
@@ -287,8 +287,8 @@
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-6">
         <span class="font-bold tracking-wider font-headline-md text-brand-charcoal">Tabajoy</span>
-        <a href="#tokusho" class="hover:text-brand-charcoal transition-colors">特定商取引法に基づく表記</a>
-        <a href="#privacy" class="hover:text-brand-charcoal transition-colors">プライバシーポリシー</a>
+        <a href="/legal/desktop/" class="hover:text-brand-charcoal transition-colors">特定商取引法に基づく表記</a>
+        <a href="/privacy/desktop/" class="hover:text-brand-charcoal transition-colors">プライバシーポリシー</a>
         <a href="#contact" class="hover:text-brand-charcoal transition-colors">お問い合わせ</a>
       </div>
       <div>

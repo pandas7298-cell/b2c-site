@@ -1,60 +1,220 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Tabajoy — Stitch 设计原型</title>
-  <style>
-    :root { color-scheme: light; --mist:#F7F8F7; --white:#fff; --ink:#292827; --stone:#716D6A; --berry:#B84F60; --line:#EBECE8; }
-    * { box-sizing: border-box; }
-    body { margin:0; background:var(--mist); color:var(--ink); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
-    main { max-width:1080px; margin:auto; padding:40px 24px 72px; }
-    header { padding:28px; border:1px solid var(--line); border-radius:24px; background:var(--white); }
-    h1,h2,p { margin-top:0; } h1 { margin-bottom:8px; font-size:clamp(26px,4vw,38px); }
-    .lead { color:var(--stone); margin-bottom:0; }
-    .notice { margin-top:18px; padding:14px 16px; border-radius:14px; background:#fbf3f4; color:#6e3440; font-size:14px; }
-    section { margin-top:30px; }
-    h2 { font-size:20px; margin-bottom:12px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:12px; }
-    article { padding:16px; background:var(--white); border:1px solid var(--line); border-radius:16px; }
-    article h3 { font-size:16px; margin:0 0 10px; }
-    .links { display:flex; flex-wrap:wrap; gap:8px; }
-    a { color:var(--berry); text-decoration:none; font-weight:600; }
-    a:hover { text-decoration:underline; }
-    .links a { display:inline-flex; padding:7px 11px; border:1px solid var(--line); border-radius:999px; background:var(--mist); font-size:13px; }
-    .status { color:var(--stone); font-size:13px; }
-    footer { margin-top:28px; color:var(--stone); font-size:13px; }
-    @media(max-width:520px) { main{padding:20px 14px 48px} header{padding:20px} }
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Tabajoy | スクイーズ</title>
+<!-- Google Fonts: Zen Kaku Gothic New & Zen Maru Gothic -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&amp;family=Zen+Maru+Gothic:wght@500;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            mist: '#F7F8F7',
+            surface: '#FFFFFF',
+            charcoal: '#292827',
+            stone: '#716D6A',
+            berry: '#B84F60',
+            'stone-light': '#E5E7E5',
+            'stone-subtle': '#EEF0EE'
+          },
+          fontFamily: {
+            sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
+            maru: ['"Zen Maru Gothic"', '"Zen Kaku Gothic New"', 'sans-serif'],
+            headline: ['"Zen Maru Gothic"', '"Zen Kaku Gothic New"', 'sans-serif'],
+            'headline-hero': ['"Zen Maru Gothic"', '"Zen Kaku Gothic New"', 'sans-serif'],
+            'body-md': ['"Zen Kaku Gothic New"', 'sans-serif'],
+            'body-lg': ['"Zen Kaku Gothic New"', 'sans-serif'],
+            'title-md': ['"Zen Kaku Gothic New"', 'sans-serif'],
+            'label-sm': ['"Zen Kaku Gothic New"', 'sans-serif'],
+            'label-md': ['"Zen Kaku Gothic New"', 'sans-serif'],
+            'headline-md': ['"Zen Kaku Gothic New"', 'sans-serif'],
+            mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #F7F8F7;
+      color: #292827;
+      font-family: "Zen Kaku Gothic New", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .accent-headline {
+      font-family: "Zen Maru Gothic", "Zen Kaku Gothic New", sans-serif;
+    }
   </style>
 </head>
-<body>
-<main>
-  <header>
-    <h1>Tabajoy 设计原型</h1>
-    <p class="lead">Stitch 导出的静态页面预览。选择页面查看 Desktop / Mobile 设计稿。</p>
-    <div class="notice"><strong>原型用途：</strong>这不是可交易的网店。价格、材质、运费等信息仍待确认；Medusa / Stripe 未接入，购买和订单提交功能不可用。</div>
-  </header>
-  <section>
-    <h2>页面清单</h2>
-    <div class="grid">
-      <article><h3>00 — 网站地图</h3><div class="links"><a href="/sitemap/">打开 Sitemap</a></div></article>
-      <article><h3>01 — 首页</h3><div class="links"><a href="/home/desktop/">Desktop</a><a href="/home/mobile/">Mobile</a></div></article>
-      <article><h3>02 — 商品列表</h3><div class="links"><a href="/collection/desktop/">Desktop</a><a href="/collection/mobile/">Mobile</a></div></article>
-      <article><h3>03 — クロワッサン猫</h3><div class="links"><a href="/products/croissant-cat/desktop/">Desktop</a><a href="/products/croissant-cat/mobile/">Mobile</a></div></article>
-      <article><h3>04 — たまごおにぎり</h3><div class="links"><a href="/products/egg-onigiri/desktop/">Desktop</a><a href="/products/egg-onigiri/mobile/">Mobile</a></div></article>
-      <article><h3>05 — 空购物车状态</h3><div class="links"><a href="/cart/empty/">打开独立状态</a></div></article>
-      <article><h3>06 — 有商品购物车</h3><div class="links"><a href="/cart/filled/desktop/">Desktop</a><a href="/cart/filled/mobile/">Mobile</a></div></article>
-      <article><h3>07 — 结账原型</h3><div class="links"><a href="/checkout/desktop/">Desktop</a><a href="/checkout/mobile/">Mobile</a></div></article>
-      <article><h3>08 — 订单完成画面</h3><div class="links"><a href="/checkout/order-complete/desktop/">Desktop</a><a href="/checkout/order-complete/mobile/">Mobile</a></div><p class="status">仅为独立原型画面，不代表已创建订单。</p></article>
-      <article><h3>09 — 特定商取引法表示</h3><div class="links"><a href="/legal/desktop/">Desktop</a><a href="/legal/mobile/">Mobile</a></div></article>
-      <article><h3>10 — 配送・送料・返品</h3><div class="links"><a href="/shipping-returns/desktop/">Desktop</a><a href="/shipping-returns/mobile/">Mobile</a></div></article>
-      <article><h3>11 — 隐私政策</h3><div class="links"><a href="/privacy/desktop/">Desktop</a><a href="/privacy/mobile/">Mobile</a></div></article>
-      <article><h3>12 — 利用规约</h3><div class="links"><a href="/terms/desktop/">Desktop</a><a href="/terms/mobile/">Mobile</a></div></article>
-      <article><h3>13 — 常见问题</h3><div class="links"><a href="/faq/desktop/">Desktop</a><a href="/faq/mobile/">Mobile</a></div></article>
-    </div>
-  </section>
-  <footer>共 26 个已整理画面：12 组 Desktop / Mobile 配对、1 个 Sitemap、1 个空购物车状态。Contact 页面尚未创建。</footer>
+<body class="min-h-screen bg-mist text-charcoal font-sans flex flex-col justify-between selection:bg-berry/10 selection:text-berry">
+<!-- Compact Production Header -->
+<header class="w-full bg-surface/90 backdrop-blur-md border-b border-stone-subtle sticky top-0 z-30 font-sans">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 h-16 sm:h-20 flex items-center justify-between">
+<!-- Minimal Brand / Wordmark Space -->
+<div class="flex items-center space-x-3">
+<a class="text-xl font-bold tracking-tight text-charcoal hover:opacity-80 transition font-sans" href="/">Tabajoy</a>
+</div>
+<!-- Navigation & Japanese Store Utility -->
+<nav class="hidden md:flex items-center space-x-8 text-sm text-stone font-normal font-sans">
+<a class="hover:text-charcoal transition-colors" href="/collection/desktop/">コレクション</a>
+<a class="hover:text-charcoal transition-colors" href="#">ストーリー</a>
+<a class="hover:text-charcoal transition-colors" href="#">ギャラリー</a>
+<a class="hover:text-charcoal transition-colors" href="#">お知らせ</a>
+</nav>
+<!-- Currency indicator & Utility links -->
+<div class="flex items-center space-x-5 text-sm font-sans">
+<div class="flex items-center text-xs font-medium text-stone tracking-wide bg-mist border border-stone-subtle px-2.5 py-1 rounded">
+<span class="text-charcoal font-semibold">JPY (¥)</span>
+<span class="ml-1 text-[10px] text-stone">日本</span>
+</div>
+<a aria-label="アカウント" class="text-stone hover:text-charcoal transition-colors p-1" href="#">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16 7a4 44 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+<a aria-label="買い物かご" class="text-stone hover:text-charcoal transition-colors p-1 relative" href="/cart/empty/">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+</a>
+</div>
+</div>
+</header>
+<!-- Main Hero Viewport Container -->
+<main class="flex-grow flex items-start max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pb-12 py-5 font-sans">
+<div class="w-full flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-16 xl:gap-20 items-start">
+<!-- Left Column (Headline, Category, Copy, CTA) -->
+<section class="w-full lg:col-span-5 flex flex-col justify-start mt-8 lg:mt-0 text-left font-sans">
+<!-- Category Label -->
+<div class="mb-4 sm:mb-6">
+<span class="inline-block text-[11px] sm:text-xs font-medium tracking-[0.2em] text-stone border-b border-stone-subtle pb-1 font-sans">スクイーズ</span>
+</div>
+<!-- Headline -->
+<h1 class="accent-headline text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-charcoal leading-[1.3] mb-5 sm:mb-6">「ひと息ついて、<br class="hidden sm:inline">ぎゅっと。」</h1>
+<!-- Supporting Copy -->
+<p class="text-stone text-base sm:text-lg leading-relaxed font-normal mb-8 sm:mb-10 max-w-md font-sans">「やわらかな感触を、毎日のひと休みに。」</p>
+<!-- Primary CTA Area -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+<a class="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 bg-berry text-surface hover:bg-[#A34353] active:bg-[#8F3746] text-sm sm:text-base font-medium rounded transition duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-berry/30 text-center tracking-wider font-sans" href="#collection">
+<span class="font-sans">商品を見る</span>
+<svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</a>
+</div>
+</section>
+<!-- Right Column (Product demonstration media card) -->
+<section class="w-full lg:col-span-7 flex justify-center">
+<div class="w-full max-w-xl lg:max-w-none bg-surface border border-stone-subtle rounded-xl p-4 sm:p-6 lg:p-8 shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
+<!-- Product media frame -->
+<div class="relative w-full aspect-[4/3] sm:aspect-[16/11] bg-[#F1F2F0] rounded-lg overflow-hidden flex flex-col items-center justify-center border border-stone-light/60 p-6 text-center"><video class="w-full h-full object-cover" controls playsinline preload="metadata"><source src="/assets/product-demo.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video></div>
+<div class="mt-4 flex items-center justify-between text-xs text-stone px-1 font-sans">
+<span class="tracking-wide font-sans">感触の所作：押下と復元のリズム</span>
+<!-- Monospace tag strictly for Latin technical identifier -->
+<span class="text-[11px] font-mono text-stone/60">COLLECTION NO. 01</span>
+</div>
+</div>
+</section>
+</div>
 </main>
-</body>
-</html>
+<!-- Clean Minimal Footer Accent -->
+<section class="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pb-20 pt-4 font-sans" id="collection">
+<!-- Section Header -->
+<div class="mb-10 sm:mb-12 border-t border-stone-subtle pt-10">
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2">
+<div>
+<span class="text-[11px] uppercase tracking-[0.2em] text-stone font-medium">SELECTION</span>
+<h2 class="accent-headline text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-charcoal mt-1.5">好きな形から選ぶ</h2>
+</div>
+<p class="text-xs sm:text-sm text-stone max-w-sm">日々のひと息に寄り添う、個性ある感触のラインナップ</p>
+</div>
+</div>
+<!-- Asymmetric Editorial Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+<!-- Product 1: クロワッサン猫 (Featured with larger visual weight / col-span-7) -->
+<article class="lg:col-span-7 bg-surface border border-stone-subtle rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
+<div>
+<!-- Header & Name -->
+<div class="flex items-start justify-between gap-4 mb-3">
+<div>
+<span class="text-[10px] font-mono tracking-widest text-stone/70 uppercase">MODEL 01 // FEATURED</span>
+<h3 class="accent-headline text-2xl sm:text-3xl text-charcoal font-medium mt-1">クロワッサン猫</h3>
+</div>
+<span class="text-[11px] font-mono text-stone/60 px-2 py-0.5 rounded bg-mist border border-stone-subtle">NO. CN-01</span>
+</div>
+<!-- Non-food safety notice -->
+<div class="mb-5 p-2.5 rounded bg-[#F1F2F0] border border-stone-light/80 text-xs text-stone leading-relaxed"><span class="font-medium text-charcoal block mb-0.5">安全上のご注意</span><span class="">お菓子ではありません。食品ではありません。口に入れないでください。</span></div>
+<!-- Authentic Product Image -->
+<div class="relative w-full aspect-[16/10] bg-[#F1F2F0] rounded-lg border border-stone-light/60 overflow-hidden mb-6 flex items-center justify-center">
+<img alt="クロワッサン猫 スクイーズ" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACsNVL1ctE9nIwNKC3A85ctWKqrlSA-SjnJLJOM5NSOfLkD3mKl1kZTlEELpbWp8QVBieodu-FJC8iUGm6dsi0UesPmjuTQ_l5E73zuENeiyK9jGMjFrT-dAjlUtdpIA4o-OQw_v1VX0mQfhO1LUTNDp3N3CTwtGUxpLxnZbRGH8pbYWUpgQ1kYXO0wDHhHLb2TJmsRnUopt_7-ORuSnIoVbg1oRzruDprdW6ZKEoYNO5S-dXhnOzkeVQILVKh03xL_5w">
+</div>
+<!-- Exact Description -->
+<p class="text-stone text-sm sm:text-base leading-relaxed mb-6 font-sans">
+          クロワッサンと猫を組み合わせた、思わず手に取りたくなるスクイーズ。
+        </p>
+</div>
+<!-- CTA -->
+<div class="pt-4 border-t border-stone-subtle flex items-center justify-between">
+<a class="inline-flex items-center justify-center px-6 py-2.5 bg-berry text-surface hover:bg-[#A34353] active:bg-[#8F3746] text-sm font-medium rounded transition duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-berry/30" href="/products/croissant-cat/desktop/">
+<span class="">商品詳細を見る</span>
+<svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</a>
+<span class="text-[11px] text-stone/70">静寂とやわらかな感触</span>
+</div>
+</article>
+<!-- Product 2: たまごおにぎり (Distinct product / col-span-5) -->
+<article class="lg:col-span-5 bg-surface border border-stone-subtle rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
+<div>
+<!-- Header & Name -->
+<div class="flex items-start justify-between gap-4 mb-3">
+<div>
+<span class="text-[10px] font-mono tracking-widest text-stone/70 uppercase">MODEL 02 // DISTINCT OBJECT</span>
+<h3 class="accent-headline text-2xl sm:text-3xl text-charcoal font-medium mt-1">たまごおにぎり</h3>
+</div>
+<span class="text-[11px] font-mono text-stone/60 px-2 py-0.5 rounded bg-mist border border-stone-subtle">NO. TO-02</span>
+</div>
+<!-- Non-food safety notice (prominent) -->
+<div class="mb-5 p-2.5 rounded bg-[#F1F2F0] border border-stone-light/80 text-xs text-stone leading-relaxed"><span class="font-medium text-charcoal block mb-0.5">安全上のご注意</span><span class="">お菓子ではありません。食品ではありません。実際のおにぎりではありません。口に入れないでください。</span></div>
+<!-- Authentic Product Image -->
+<div class="relative w-full aspect-[4/3] bg-[#F1F2F0] rounded-lg border border-stone-light/60 overflow-hidden mb-6 flex items-center justify-center">
+<img alt="たまごおにぎり スクイーズ" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC05RDLDADsJ6RlyAbcb3XSNXnTfP6tYvcqxl4SoGxnoq798x-btkJQITK78iyArbU3ySeurdooXOlXBy2k4GqaN9PK34Tuxz3hD9LVmUIh2Qqc3S8S8gdaejG4uksBt3mclVSE8AMWN6229GXoTIsaGoxgnneXH51MhsL5pqyhZsuNi_PwjSIi1-I9PFV7ngDAK2tJMUPlceP9WX4-FsCEuVmTYeGr8I2aGPWxawh3zVzIswQb1YzEe2ziMBVo7BTX29E">
+</div>
+<!-- Exact Description -->
+<p class="text-stone text-sm sm:text-base leading-relaxed mb-6 font-sans">
+          三角おにぎりの中に、まあるいたまご。見た目も楽しいスクイーズ。
+        </p>
+</div>
+<!-- CTA -->
+<div class="pt-4 border-t border-stone-subtle flex items-center justify-between">
+<a class="inline-flex items-center justify-center px-6 py-2.5 bg-mist text-charcoal border border-stone-light hover:bg-[#EEF0EE] active:bg-stone-light text-sm font-medium rounded transition duration-200 focus:outline-none focus:ring-2 focus:ring-stone/20" href="/products/egg-onigiri/desktop/">
+<span class="">商品詳細を見る</span>
+<svg class="w-3.5 h-3.5 ml-1.5 transition-transform duration-200 group-hover:translate-x-1 text-stone" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+</a>
+<span class="text-[11px] text-stone/70">触感オブジェ</span>
+</div>
+</article>
+</div>
+</section><footer class="w-full border-t border-stone-subtle py-5 bg-surface text-stone text-xs font-sans">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-3">
+<div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 text-[11px] font-sans">
+<span class="text-charcoal font-medium">オンラインストア</span>
+<span class="text-stone/80 hidden lg:inline">日常に静寂とやわらかな触感をもたらすオブジェストア</span>
+<div class="flex items-center space-x-6">
+<a class="hover:text-charcoal transition-colors" href="/shipping-returns/desktop/">ご利用ガイド</a>
+<a class="hover:text-charcoal transition-colors" href="/legal/desktop/">特定商取引法に基づく表記</a>
+<a class="hover:text-charcoal transition-colors" href="#">お問い合わせ</a>
+</div>
+</div>
+<div class="text-[10px] text-stone/70 tracking-wider font-sans">© Tabajoy ALL RIGHTS RESERVED.</div>
+</div>
+</footer>
+
+
+</body></html>
