@@ -18,5 +18,5 @@ If deploying from the command line with Vercel CLI, run it from this directory a
 - Clear browse/navigation links connect to existing static routes; unavailable destinations such as Contact, account, search, story, gallery, and news remain unimplemented.
 - No live cart, order submission, Medusa backend, or Stripe payment processing is included. Purchase and checkout-finalization controls stay disabled; the order-complete screen is a standalone prototype and is not reached by submitting an order.
 - Contact is not created.
-- The homepage demo video is served locally from `assets/product-demo.mp4` (about 40 MB); include this file when deploying. Playback uses native controls and does not autoplay.
+- The homepage demo video is served locally from `assets/product-demo.mp4` (about 40 MB); include this file when deploying. Playback uses native controls, muted autoplay, and looping.
 - Prices, materials, shipping, and legal/operational details remain unconfirmed. Do not use this deployment to accept sales.

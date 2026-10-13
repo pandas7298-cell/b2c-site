@@ -17,6 +17,8 @@
             charcoal: '#292827',
             stone: '#716D6A',
             berry: '#B84F60',
+            coral: '#F36F4A',
+            lemon: '#F6D743',
             'stone-light': '#E5E7E5',
             'stone-subtle': '#EEF0EE'
           },
@@ -84,21 +86,22 @@
 </div>
 </header>
 <!-- Main Hero Viewport Container -->
-<main class="flex-grow flex items-start max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-4 pb-6 font-sans">
-<div class="w-full flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-12 xl:gap-16 items-center">
+<main class="flex-grow max-w-7xl w-full mx-auto px-6 sm:px-8 lg:px-12 pt-4 pb-12 font-sans">
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-center"><span class="pointer-events-none absolute -top-6 left-[62%] hidden lg:block w-4 h-4 rounded-full bg-lemon" aria-hidden="true"></span>
 <!-- Left Column (Headline, Category, Copy, CTA) -->
-<section class="w-full lg:col-span-5 flex flex-col justify-start mt-6 lg:mt-0 text-left font-sans">
+<section class="order-2 lg:col-start-8 lg:col-span-5 w-full flex flex-col justify-center mt-3 lg:mt-0 text-left font-sans bg-coral text-charcoal rounded-2xl p-6 sm:p-8 lg:p-10 relative overflow-hidden">
 <!-- Category Label -->
-<div class="mb-3 sm:mb-4">
-<span class="inline-block text-[11px] sm:text-xs font-medium tracking-[0.2em] text-stone border-b border-stone-subtle pb-1 font-sans">スクイーズ</span>
+<span class="absolute -right-8 -top-8 w-24 h-24 rounded-full bg-lemon" aria-hidden="true"></span>
+<div class="mb-3 sm:mb-4 relative">
+<span class="inline-flex items-center text-[11px] sm:text-xs font-bold tracking-[0.16em] text-charcoal bg-lemon px-3 py-1.5 rounded-full mb-4 w-fit font-sans">スクイーズ</span>
 </div>
 <!-- Headline -->
-<h1 class="accent-headline text-3xl sm:text-4xl lg:text-5xl font-medium tracking-tight text-charcoal leading-[1.3] mb-4 sm:mb-5">「ひと息ついて、<br class="hidden sm:inline">ぎゅっと。」</h1>
+<h1 class="accent-headline text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-charcoal leading-[1.12] mb-4 sm:mb-5">「ひと息ついて、<br class="hidden sm:inline">ぎゅっと。」</h1>
 <!-- Supporting Copy -->
-<p class="text-stone text-base sm:text-lg leading-relaxed font-normal mb-6 sm:mb-8 max-w-md font-sans">「やわらかな感触を、毎日のひと休みに。」</p>
+<p class="text-charcoal/90 text-base sm:text-lg leading-relaxed font-normal mb-6 sm:mb-8 max-w-md font-sans">「やわらかな感触を、毎日のひと休みに。」</p>
 <!-- Primary CTA Area -->
 <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-<a class="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 bg-berry text-surface hover:bg-[#A34353] active:bg-[#8F3746] text-sm sm:text-base font-medium rounded transition duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-berry/30 text-center tracking-wider font-sans" href="#collection">
+<a class="inline-flex items-center justify-center min-h-[48px] px-8 py-3.5 bg-charcoal text-white hover:bg-[#292827]/90 active:bg-black text-sm sm:text-base font-medium rounded transition duration-200 shadow-sm focus:outline-none focus:ring-2 focus:ring-lemon/70 text-center tracking-wider font-sans" href="#collection">
 <span class="font-sans">商品を見る</span>
 <svg class="w-4 h-4 ml-2 transition-transform duration-200 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 <path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
@@ -107,10 +110,10 @@
 </div>
 </section>
 <!-- Right Column (Product demonstration media card) -->
-<section class="w-full lg:col-span-7 flex justify-center">
+<section class="order-1 lg:col-start-1 lg:col-span-7 w-full flex justify-center">
 <div class="w-full max-w-xl lg:max-w-none bg-surface border border-stone-subtle rounded-xl p-2 sm:p-3 shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
 <!-- Product media frame -->
-<div class="relative w-full aspect-[16/10] bg-[#F1F2F0] rounded-lg overflow-hidden"><video autoplay muted loop class="w-full h-full object-cover" controls playsinline preload="metadata"><source src="/assets/product-demo.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video></div>
+<div class="relative w-full aspect-square bg-[#F1F2F0] rounded-xl overflow-hidden"><video autoplay muted loop class="w-full h-full object-cover" controls playsinline preload="metadata"><source src="/assets/product-demo.mp4" type="video/mp4">お使いのブラウザでは動画を再生できません。</video></div>
 <div class="mt-4 flex items-center justify-between text-xs text-stone px-1 font-sans">
 <span class="tracking-wide font-sans">感触の所作：押下と復元のリズム</span>
 <!-- Monospace tag strictly for Latin technical identifier -->
@@ -133,22 +136,22 @@
 </div>
 </div>
 <!-- Asymmetric Editorial Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 items-stretch">
 <!-- Product 1: クロワッサン猫 (Featured with larger visual weight / col-span-7) -->
-<article class="lg:col-span-7 bg-surface border border-stone-subtle rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
+<article class="bg-surface border border-stone-subtle rounded-2xl p-4 sm:p-6 flex flex-col justify-between shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
 <div>
 <!-- Header & Name -->
 <div class="flex items-start justify-between gap-4 mb-3">
 <div>
-<span class="text-[10px] font-mono tracking-widest text-stone/70 uppercase">MODEL 01 // FEATURED</span>
-<h3 class="accent-headline text-2xl sm:text-3xl text-charcoal font-medium mt-1">クロワッサン猫</h3>
+<span class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest text-charcoal bg-lemon/80 rounded px-2 py-1 uppercase">MODEL 01 // FEATURED</span>
+<h3 class="accent-headline text-xl sm:text-2xl text-charcoal font-bold mt-1">クロワッサン猫</h3>
 </div>
 <span class="text-[11px] font-mono text-stone/60 px-2 py-0.5 rounded bg-mist border border-stone-subtle">NO. CN-01</span>
 </div>
 <!-- Non-food safety notice -->
-<div class="mb-5 p-2.5 rounded bg-[#F1F2F0] border border-stone-light/80 text-xs text-stone leading-relaxed"><span class="font-medium text-charcoal block mb-0.5">安全上のご注意</span><span class="">お菓子ではありません。食品ではありません。口に入れないでください。</span></div>
+<div class="mb-4 p-2.5 rounded-lg bg-coral/10 border-l-4 border-coral text-xs text-charcoal leading-relaxed"><span class="font-medium text-charcoal block mb-0.5">安全上のご注意</span><span class="">お菓子ではありません。食品ではありません。口に入れないでください。</span></div>
 <!-- Authentic Product Image -->
-<div class="relative w-full aspect-[16/10] bg-[#F1F2F0] rounded-lg border border-stone-light/60 overflow-hidden mb-6 flex items-center justify-center">
+<div class="relative w-full aspect-[16/11] bg-[#FFF0E8] rounded-xl overflow-hidden mb-5 flex items-center justify-center">
 <img alt="クロワッサン猫 スクイーズ" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACsNVL1ctE9nIwNKC3A85ctWKqrlSA-SjnJLJOM5NSOfLkD3mKl1kZTlEELpbWp8QVBieodu-FJC8iUGm6dsi0UesPmjuTQ_l5E73zuENeiyK9jGMjFrT-dAjlUtdpIA4o-OQw_v1VX0mQfhO1LUTNDp3N3CTwtGUxpLxnZbRGH8pbYWUpgQ1kYXO0wDHhHLb2TJmsRnUopt_7-ORuSnIoVbg1oRzruDprdW6ZKEoYNO5S-dXhnOzkeVQILVKh03xL_5w">
 </div>
 <!-- Exact Description -->
@@ -168,20 +171,20 @@
 </div>
 </article>
 <!-- Product 2: たまごおにぎり (Distinct product / col-span-5) -->
-<article class="lg:col-span-5 bg-surface border border-stone-subtle rounded-xl p-6 sm:p-8 flex flex-col justify-between shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
+<article class="bg-surface border border-stone-subtle rounded-xl p-4 sm:p-6 flex flex-col justify-between shadow-[0_4px_24px_-8px_rgba(41,40,39,0.06)] relative overflow-hidden">
 <div>
 <!-- Header & Name -->
 <div class="flex items-start justify-between gap-4 mb-3">
 <div>
-<span class="text-[10px] font-mono tracking-widest text-stone/70 uppercase">MODEL 02 // DISTINCT OBJECT</span>
-<h3 class="accent-headline text-2xl sm:text-3xl text-charcoal font-medium mt-1">たまごおにぎり</h3>
+<span class="inline-block text-[10px] font-mono tracking-widest text-charcoal bg-coral/15 rounded px-2 py-1 uppercase">MODEL 02 // DISTINCT OBJECT</span>
+<h3 class="accent-headline text-xl sm:text-2xl text-charcoal font-bold mt-1">たまごおにぎり</h3>
 </div>
 <span class="text-[11px] font-mono text-stone/60 px-2 py-0.5 rounded bg-mist border border-stone-subtle">NO. TO-02</span>
 </div>
 <!-- Non-food safety notice (prominent) -->
-<div class="mb-5 p-2.5 rounded bg-[#F1F2F0] border border-stone-light/80 text-xs text-stone leading-relaxed"><span class="font-medium text-charcoal block mb-0.5">安全上のご注意</span><span class="">お菓子ではありません。食品ではありません。実際のおにぎりではありません。口に入れないでください。</span></div>
+<div class="mb-4 p-2.5 rounded-lg bg-coral/10 border-l-4 border-coral text-xs text-charcoal leading-relaxed"><span class="font-medium text-charcoal block mb-0.5">安全上のご注意</span><span class="">お菓子ではありません。食品ではありません。実際のおにぎりではありません。口に入れないでください。</span></div>
 <!-- Authentic Product Image -->
-<div class="relative w-full aspect-[4/3] bg-[#F1F2F0] rounded-lg border border-stone-light/60 overflow-hidden mb-6 flex items-center justify-center">
+<div class="relative w-full aspect-[16/11] bg-[#FFF4B8] rounded-xl overflow-hidden mb-5 flex items-center justify-center">
 <img alt="たまごおにぎり スクイーズ" class="w-full h-full object-cover object-center" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC05RDLDADsJ6RlyAbcb3XSNXnTfP6tYvcqxl4SoGxnoq798x-btkJQITK78iyArbU3ySeurdooXOlXBy2k4GqaN9PK34Tuxz3hD9LVmUIh2Qqc3S8S8gdaejG4uksBt3mclVSE8AMWN6229GXoTIsaGoxgnneXH51MhsL5pqyhZsuNi_PwjSIi1-I9PFV7ngDAK2tJMUPlceP9WX4-FsCEuVmTYeGr8I2aGPWxawh3zVzIswQb1YzEe2ziMBVo7BTX29E">
 </div>
 <!-- Exact Description -->
